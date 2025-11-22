@@ -71,4 +71,3 @@ await index.query({
 
 **Note**: This file provides context for GitHub Copilot to generate accurate, project-specific code suggestions. Keep it updated as requirements evolve.
 
-Answer in tagalog
