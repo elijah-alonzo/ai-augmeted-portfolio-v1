@@ -1,4 +1,6 @@
-import { Server, ListToolsRequestSchema, CallToolRequestSchema, Tool } from '@modelcontextprotocol/sdk'
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+import { ListToolsRequestSchema, CallToolRequestSchema } from '@modelcontextprotocol/sdk/types.js'
+import type { Tool } from '@modelcontextprotocol/sdk/types.js'
 import fs from 'fs'
 import path from 'path'
 import { Groq } from 'groq-sdk'
@@ -75,10 +77,17 @@ async function generateResponse(question: string, context: string) {
 
 // Create and export MCP server instance
 export function createDigitalTwinServer() {
-  const server = new Server({
-    name: 'digital-twin-mcp',
-    version: '1.0.0',
-  })
+  const server = new Server(
+    {
+      name: 'digital-twin-mcp',
+      version: '1.0.0',
+    },
+    {
+      capabilities: {
+        tools: {},
+      },
+    }
+  )
 
   // List available tools
   server.setRequestHandler(ListToolsRequestSchema, async () => {
