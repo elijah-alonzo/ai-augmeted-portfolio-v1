@@ -703,7 +703,7 @@ export default function Page() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 {/* Hidden Web3Forms Access Key */}
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                <input type="hidden" name="access_key" value="5ff992ce-f259-43d2-adeb-b8668842824a" />
                 <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio" />
                 <input type="hidden" name="from_name" value="Portfolio Contact Form" />
                 
