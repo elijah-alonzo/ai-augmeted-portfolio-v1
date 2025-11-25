@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "digital-twin-local": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://localhost:3000/api/mcp"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "digital-twin-production": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://YOUR-PROJECT-NAME.vercel.app/api/mcp"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

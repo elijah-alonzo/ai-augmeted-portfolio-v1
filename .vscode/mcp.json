@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "digital-twin-local": {
+      "type": "http",
+      "url": "http://localhost:3000/api/mcp",
+      "timeout": 30000,
+      "description": "Local Digital Twin RAG MCP Server for development"
+    },
+    "digital-twin-production": {
+      "type": "http",
+      "url": "https://YOUR-PROJECT-NAME.vercel.app/api/mcp",
+      "timeout": 30000,
+      "description": "Production Digital Twin RAG MCP Server"
+    }
+  }
+}

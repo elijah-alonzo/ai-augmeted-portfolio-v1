@@ -1,0 +1,17 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "env": {
+    "UPSTASH_VECTOR_REST_URL": "@upstash_vector_rest_url",
+    "UPSTASH_VECTOR_REST_TOKEN": "@upstash_vector_rest_token",
+    "GROQ_API_KEY": "@groq_api_key"
+  }
+}
