@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
- Nigga
-## Getting Started
+# E-Portfolio with RAG AI Chatbot
 
-First, run the development server:
+A personal portfolio website built with Next.js featuring a Retrieval-Augmented Generation (RAG) AI chatbot. Users can explore projects and ask questions to an AI assistant about the portfolio content in real time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Portfolio Sections
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Home
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The landing page serves as the main entry point to your e-portfolio. It introduces visitors to who you are, what you do, and provides navigation to explore the rest of your portfolio. This section sets the tone for your professional brand and makes a strong first impression.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Home Section](public/images/digitaltwin.png)
 
-## Learn More
+### Skills
 
-To learn more about Next.js, take a look at the following resources:
+Showcase your technical and professional competencies in this section. Highlight programming languages, frameworks, tools, and soft skills that are relevant to your career. Use clear categorization and proficiency levels to help visitors understand your expertise at a glance.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Skills Section](public/images/equallearn.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Certifications & Training
 
-## Deploy on Vercel
+Display any professional certifications, courses, or training programs you've completed. Include details such as the issuing organization, completion date, and relevant links or credentials. This section establishes credibility and demonstrates your commitment to continuous learning.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Certifications Section](public/images/itsdatabase.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Experience
+
+Share your professional background and work history in this section. Include job titles, companies, employment periods, and key responsibilities or achievements. Provide context for how your experience has shaped your skills and professional development.
+
+![Experience Section](public/images/itecon2024.png)
+
+### Projects
+
+Highlight your best work and completed projects. Include project descriptions, technologies used, links to live demos or repositories, and any key accomplishments or learnings. This section demonstrates your practical abilities and problem-solving skills.
+
+![Projects Section](public/images/e-portfolio.png)
+
+### Contact
+
+Provide visitors with multiple ways to get in touch. Include email, phone number, links to social media profiles, GitHub, LinkedIn, or other professional networks. Make it easy for potential employers, collaborators, or clients to reach you.
+
+![Contact Section](public/images/roadshow.png)
+
+## AI Chatbot Feature
+
+This portfolio includes an intelligent RAG (Retrieval-Augmented Generation) AI chatbot that allows visitors to ask questions about your portfolio content in real time. The chatbot retrieves relevant information from your portfolio sections and provides accurate, contextual responses to help visitors learn more about your work and expertise.
+

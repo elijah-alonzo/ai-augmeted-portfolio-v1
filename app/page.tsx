@@ -8,6 +8,25 @@ export default function Page() {
   const [showChat, setShowChat] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
+  const [animatedSections, setAnimatedSections] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animatedSections.has(entry.target.id)) {
+            setAnimatedSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [animatedSections]);
 
   async function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -64,11 +83,11 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section id="home" className="py-32 px-4 sm:px-6 lg:px-8 bg-white min-h-screen flex items-center">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className={`space-y-8 transition-all duration-1000 ${animatedSections.has('home') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight whitespace-nowrap">
                  <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">Elijah Alonzo</span>
@@ -144,7 +163,7 @@ export default function Page() {
             </div>
 
             {/* Right Side - Profile Image */}
-            <div className="flex justify-center">
+            <div className={`flex justify-center transition-all duration-1000 delay-300 ${animatedSections.has('home') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="relative w-80 h-80">
                 {/* Image Container */}
                 <div  className="relative w-full h-full rounded-full shadow-lg">
@@ -165,7 +184,7 @@ export default function Page() {
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
             <p className="text-base text-gray-600 mx-auto">
               An overview of my technical skills, tools, and areas of expertise in technology and development.
@@ -174,7 +193,7 @@ export default function Page() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Web Development */}
-            <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '100ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
                   <Wrench className="w-6 h-6 text-white" />
@@ -194,7 +213,7 @@ export default function Page() {
             </div>
 
             {/* Programming Languages */}
-            <div className="bg-gradient-to-br from-green-50 to-white border border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-green-50 to-white border border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '200ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-700 rounded-lg flex items-center justify-center">
                   <Palette className="w-6 h-6 text-white" />
@@ -221,7 +240,7 @@ export default function Page() {
             </div>
 
             {/* Frameworks & Libraries */}
-            <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '300ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-700 rounded-lg flex items-center justify-center">
                   <Brush className="w-6 h-6 text-white" />
@@ -241,7 +260,7 @@ export default function Page() {
             </div>
 
             {/* Databases */}
-            <div className="bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-700 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-white" />
@@ -261,7 +280,7 @@ export default function Page() {
             </div>
 
             {/* Multimedia & Design */}
-            <div className="bg-gradient-to-br from-pink-50 to-white border border-pink-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-pink-50 to-white border border-pink-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '500ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-700 rounded-lg flex items-center justify-center">
                   <Video className="w-6 h-6 text-white" />
@@ -300,7 +319,7 @@ export default function Page() {
             </div>
 
             {/* Soft Skills */}
-            <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:scale-105 group">
+            <div className={`bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-700 transform hover:scale-105 group ${animatedSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '600ms' }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-700 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-white" />
@@ -325,13 +344,13 @@ export default function Page() {
       {/* Certifications & Training Section */}
       <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${animatedSections.has('certifications') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Certifications and Trainings</h2>
             <p className="text-base text-gray-600 mx-auto">
               A collection of all the certifications, seminars, and training programs I have completed.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000 ${animatedSections.has('certifications') ? 'opacity-100' : 'opacity-0'}`}>
             {/* ITS Databases Certification */}
             <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl overflow-hidden hover:border-blue-400 hover:shadow-lg transition transform hover:scale-105 group shadow-lg">
               <div className="h-32 overflow-hidden relative">
@@ -440,14 +459,14 @@ export default function Page() {
       {/* Experiences Section */}
       <section id="experiences" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto"> 
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${animatedSections.has('experiences') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Experiences</h2>
               <p className="text-base text-gray-600 mx-auto">
                 A collection of roles, projects, and leadership work that highlight my technical abilities and the soft skills that support them—ranging from hands-on development to collaboration, problem-solving, and project execution.
               </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/80 backdrop-blur border border-blue-200 rounded-xl p-8 shadow-lg hover:shadow-xl">
+            <div className={`bg-white/80 backdrop-blur border border-blue-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-1000 ${animatedSections.has('experiences') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <h3 className="text-2xl font-semibold text-blue-600 mb-6">Hard Skills Experience</h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4">
@@ -464,7 +483,7 @@ export default function Page() {
                 </div>
               </div>
             </div>
-            <div className="bg-white/80 backdrop-blur border border-indigo-200 rounded-xl p-8 shadow-lg hover:shadow-xl">
+            <div className={`bg-white/80 backdrop-blur border border-indigo-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-1000 delay-200 ${animatedSections.has('experiences') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-6">Soft Skills Experience</h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-indigo-500 pl-4">
@@ -497,13 +516,13 @@ export default function Page() {
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${animatedSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
             <p className="text-base text-gray-600 mx-auto">
               A portfolio of functional systems I have designed, developed, and successfully deployed throughout my career.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-1000 ${animatedSections.has('projects') ? 'opacity-100' : 'opacity-0'}`}>
             {/* Digital Twin */}
             <div className="bg-gradient-to-br from-cyan-50 to-white border border-cyan-200 rounded-xl overflow-hidden hover:border-cyan-400 hover:shadow-lg transition transform hover:scale-105 group shadow-lg">
               <div className="h-48 overflow-hidden relative">
@@ -624,10 +643,10 @@ export default function Page() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Column - Contact Info */}
-            <div>
+            <div className={`transition-all duration-1000 ${animatedSections.has('contact') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h2>
               <p className="text-base text-gray-600 mb-8 leading-relaxed">
-                I'm always excited to discuss AI projects, robotics innovations, or potential collaborations. Whether you're looking for an AI developer, data analyst, or just want to chat about technology, feel free to reach out!
+                Whether you're looking for an AI and Web developer, data analyst, freelancer, or graphic designer, feel free to reach out!
               </p>
 
               <div className="space-y-4">
@@ -699,7 +718,7 @@ export default function Page() {
             </div>
 
             {/* Right Column - Contact Form */}
-            <div className="bg-gradient-to-br from-white to-blue-50 border border-blue-200 rounded-xl p-8 backdrop-blur-md shadow-lg">
+            <div className={`bg-gradient-to-br from-white to-blue-50 border border-blue-200 rounded-xl p-8 backdrop-blur-md shadow-lg transition-all duration-1000 delay-200 ${animatedSections.has('contact') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 {/* Hidden Web3Forms Access Key */}
