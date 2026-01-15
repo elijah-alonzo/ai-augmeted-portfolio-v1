@@ -3,9 +3,10 @@
 A personal portfolio website built with Next.js featuring a Retrieval-Augmented Generation (RAG) AI chatbot. Users can explore projects and ask questions to an AI assistant about the portfolio content in real time.
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" style="margin: 5px style="padding: 10px;" alt="Next.js" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" style="margin: 5px style="padding: 10px;" alt="TypeScript" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" style="margin: 5px style="padding: 10px;" alt="Tailwind CSS" />
+  Tech used:
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="20" style="margin: 5px;" alt="Next.js" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="20" style="margin: 5px;" alt="TypeScript" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="20" style="margin: 5px;" alt="Tailwind CSS" />
 </p>
 
 ## Screenshots
