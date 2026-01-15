@@ -4,12 +4,12 @@ A personal portfolio website built with Next.js featuring a Retrieval-Augmented 
 
 <h2 align="center"> Technologies </h2>
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" style="margin: 5px;" alt="Next.js" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" style="margin: 5px;" alt="TypeScript" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" style="margin: 5px;" alt="Tailwind CSS" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" style="margin: 5px style="padding: 10px;;" alt="Next.js" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" style="margin: 5px style="padding: 10px;;" alt="TypeScript" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="40" style="margin: 5px style="padding: 10px;;" alt="Tailwind CSS" />
 </p>
 
-## Screenshots
+<h2 align="center"> Screenshots </h2>
 
 ### Home
 
