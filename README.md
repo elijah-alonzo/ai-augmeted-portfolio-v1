@@ -1,52 +1,41 @@
-# E-Portfolio with RAG AI Chatbot
-<p>
-A personal portfolio website built with Next.js featuring a Retrieval-Augmented Generation (RAG) AI chatbot. Users can explore projects and ask questions to an AI assistant about the portfolio content in real time.
-
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="20" style="margin: 5px;" alt="Next.js" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="20" style="margin: 5px;" alt="TypeScript" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="20" style="margin: 5px;" alt="Tailwind CSS" />
-</p>
-
-## Screenshots
-
-### Home
-
-The Home section introduces who I am and what I do. It displays my name, professional tagline, and provides navigation to the rest of my portfolio. This is the first impression for visitors.
+A personal portfolio showcasing my professional background, technical and professional skills, certifications, experience, and completed projects. The portfolio also features an AI chatbot that allows visitors to ask questions and receive answers based on information about my background, skills, experience, and projects, providing a more interactive way to explore my professional profile.
 
 ![Home Section](screenshots/home.png)
 
 ### Skills
 
-The Skills section lists my technical and professional competencies, including programming languages, frameworks, tools, and soft skills. It shows my areas of expertise and proficiency levels.
+The Skills section presents my technical and professional competencies, including programming languages, frameworks, tools, and soft skills. It gives visitors an overview of the areas I have experience in and the capabilities I bring to my work.
+
 
 ![Skills Section](screenshots/skills.png)
 
 ### Certifications & Training
 
-This section displays my professional certifications, courses, and training programs. It highlights my credentials and commitment to learning.
+The Certifications & Training section highlights my professional certifications, completed courses, and training programs. It provides evidence of my continued learning and the additional knowledge and skills I have developed beyond formal education.
 
 ![Certifications Section](screenshots/certifications.png)
 
 ### Experience
 
-The Experience section summarizes my professional background, roles, and achievements. It provides context for my skills and development.
+The Experience section presents my professional background, including previous roles, responsibilities, and notable achievements. It gives visitors a better understanding of my practical experience and how I have applied my skills in real-world settings.
+
 
 ![Experience Section](screenshots/experiences.png)
 
 ### Projects
 
-This section showcases my best work and completed projects, including descriptions and technologies used. It demonstrates my practical abilities and problem-solving skills.
+The Projects section showcases selected projects I have developed, including their purpose, key features, and technologies used. It demonstrates my ability to apply technical knowledge to solve problems and develop practical solutions.
 
 ![Projects Section](screenshots/projects.png)
 
 ### Contact
 
-The Contact section lists my email and social media links so visitors can view my profiles or reach out if needed.
+The Contact section provides visitors with ways to connect with me through my email and social media profiles. It serves as a direct point of contact for professional inquiries, opportunities, or further communication.
 
 ![Contact Section](screenshots/contact.png)
 
 ## AI Chatbot Feature
 
-Visitors can interact with my AI chatbot, which answers questions about my background, skills, and projects. All other sections are for viewing only.
+The AI Chatbot allows visitors to interact with an AI assistant that can answer questions about my background, skills, experience, certifications, and projects. It provides an interactive way for visitors to explore information about my portfolio beyond the static content presented throughout the website.
 
 ![AI Chatbot](screenshots/chat.png)
