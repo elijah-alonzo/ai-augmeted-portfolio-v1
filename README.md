@@ -1,3 +1,9 @@
+<h1 align="center">
+    
+AI Augmented Portfolio
+
+</h1>
+
 A personal portfolio showcasing my professional background, technical and professional skills, certifications, experience, and completed projects. The portfolio also features an AI chatbot that allows visitors to ask questions and receive answers based on information about my background, skills, experience, and projects, providing a more interactive way to explore my professional profile.
 
 ![Home Section](screenshots/home.png)
@@ -34,7 +40,7 @@ The Contact section provides visitors with ways to connect with me through my em
 
 ![Contact Section](screenshots/contact.png)
 
-## AI Chatbot Feature
+### AI Chatbot Feature
 
 The AI Chatbot allows visitors to interact with an AI assistant that can answer questions about my background, skills, experience, certifications, and projects. It provides an interactive way for visitors to explore information about my portfolio beyond the static content presented throughout the website.
 
