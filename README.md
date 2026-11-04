@@ -54,6 +54,8 @@ cp .env.example .env.local   # then fill in the values
 npm run dev
 ```
 
+Other scripts: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`.
+
 | Variable | Purpose |
 | --- | --- |
 | `GROQ_API_KEY` | LLM inference for the chatbot and MCP tools |
@@ -71,6 +73,8 @@ lib/            Server logic: LLM client, RAG pipeline, MCP server, theme tokens
 types/          Shared TypeScript types
 docs/           Screenshots and example MCP client configuration
 ```
+
+Dependencies point one way: `app/` → `components/` → `hooks/`, `data/`, `config/` → `lib/`. Content in `data/` is plain typed data with no UI imports; `lib/` has no knowledge of React.
 
 ## MCP Server
 
