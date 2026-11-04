@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SITE } from "@/config/site";
 import { HERO_SOCIALS } from "@/data/socials";
+import { SocialIcon } from "@/components/ui/social-icon";
 import { OpenChatButton } from "@/components/chat/open-chat-button";
 import { Reveal, Section } from "@/components/ui/section";
 
@@ -32,16 +33,16 @@ export function HeroSection() {
             </div>
 
             <div className="flex gap-4 pt-4">
-              {HERO_SOCIALS.map(({ label, href, title, icon: Icon, external }) => (
+              {HERO_SOCIALS.map(({ id, label, href, title, external }) => (
                 <a
-                  key={label}
+                  key={id}
                   href={href}
                   title={title}
                   aria-label={label}
                   {...(external && { target: "_blank", rel: "noopener noreferrer" })}
                   className="p-3 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg text-gray-600 hover:text-blue-600 shadow-sm hover:shadow-md transition"
                 >
-                  <Icon size={24} />
+                  <SocialIcon id={id} size={24} />
                 </a>
               ))}
             </div>

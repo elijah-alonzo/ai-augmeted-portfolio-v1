@@ -1,59 +1,58 @@
-import { Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
-import { FacebookIcon, InstagramIcon } from "@/components/ui/icons";
 import { SITE } from "@/config/site";
 
-type IconComponent = LucideIcon | typeof FacebookIcon;
+export type SocialId = "github" | "linkedin" | "facebook" | "instagram" | "email";
 
 export interface SocialLink {
+  id: SocialId;
   label: string;
   href: string;
   /** Text shown on the contact card. */
   display: string;
   /** Tooltip shown in the hero icon row. */
   title?: string;
-  icon: IconComponent;
+  /** Whether the link leaves the site and should open in a new tab. */
   external: boolean;
 }
 
 export const SOCIALS = {
   github: {
+    id: "github",
     label: "GitHub",
     href: "https://github.com/elijah-alonzo",
     display: "github.com/elijah-alonzo",
-    icon: Github,
     external: true,
   },
   linkedin: {
+    id: "linkedin",
     label: "LinkedIn",
     href: "https://linkedin.com/in/elijah-alonzo",
     display: "linkedin.com/in/elijah-alonzo",
-    icon: Linkedin,
     external: true,
   },
   facebook: {
+    id: "facebook",
     label: "Facebook",
     href: "https://www.facebook.com/share/1B6SvsQLH2/?mibextid=wwXIfr",
     display: "Elijah Alonzo",
     title: "Facebook: Elijah Alonzo",
-    icon: FacebookIcon,
     external: true,
   },
   instagram: {
+    id: "instagram",
     label: "Instagram",
     href: "https://www.instagram.com/eljhalnz/",
     display: "@eljhalnz",
     title: "Instagram: @eljhalnz",
-    icon: InstagramIcon,
     external: true,
   },
   email: {
+    id: "email",
     label: "Email",
     href: `mailto:${SITE.email}`,
     display: SITE.email,
-    icon: Mail,
     external: false,
   },
-} as const satisfies Record<string, SocialLink>;
+} as const satisfies Record<SocialId, SocialLink>;
 
 export const HERO_SOCIALS: SocialLink[] = [
   SOCIALS.github,

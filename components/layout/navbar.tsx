@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { NAV_LINKS } from "@/data/navigation";
 import { SITE } from "@/config/site";
+import { MobileMenu } from "./mobile-menu";
 
 export function Navbar() {
   return (
@@ -16,6 +17,7 @@ export function Navbar() {
             </a>
           ))}
         </div>
+        <MobileMenu />
       </div>
     </nav>
   );

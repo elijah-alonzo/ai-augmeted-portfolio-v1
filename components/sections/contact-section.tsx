@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { CONTACT_SOCIALS } from "@/data/socials";
 import { ContactForm } from "@/components/sections/contact-form";
+import { SocialIcon } from "@/components/ui/social-icon";
 import { Reveal, Section } from "@/components/ui/section";
 
 export function ContactSection() {
@@ -16,13 +17,13 @@ export function ContactSection() {
             </p>
 
             <div className="space-y-4">
-              {CONTACT_SOCIALS.map(({ label, href, display, icon: Icon, external }) => (
+              {CONTACT_SOCIALS.map(({ id, label, href, display, external }) => (
                 <div
-                  key={label}
+                  key={id}
                   className="bg-gradient-to-r from-blue-100 to-blue-200 border border-blue-300 rounded-lg p-4 backdrop-blur-sm hover:border-blue-500 hover:shadow-md transition"
                 >
                   <div className="flex items-start gap-4">
-                    <Icon className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <SocialIcon id={id} className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">{label}</h3>
                       <a

@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-type IconProps = SVGProps<SVGSVGElement> & { size?: number };
+export type IconProps = SVGProps<SVGSVGElement> & { size?: number | string };
 
 function BrandIcon({ size = 24, children, ...props }: IconProps & { children: React.ReactNode }) {
   return (
