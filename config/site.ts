@@ -13,6 +13,5 @@ export const SITE = {
 
 export const CONTACT_FORM = {
   endpoint: "https://api.web3forms.com/submit",
-  accessKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
   resetDelayMs: 5000,
 } as const;

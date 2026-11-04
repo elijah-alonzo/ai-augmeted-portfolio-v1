@@ -58,7 +58,6 @@ npm run dev
 | --- | --- |
 | `GROQ_API_KEY` | LLM inference for the chatbot and MCP tools |
 | `UPSTASH_VECTOR_REST_URL` / `UPSTASH_VECTOR_REST_TOKEN` | Vector search for chatbot retrieval |
-| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | Contact form delivery |
 
 ## Project Structure
 

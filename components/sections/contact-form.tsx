@@ -1,7 +1,6 @@
 "use client";
 
 import { Mail } from "lucide-react";
-import { CONTACT_FORM } from "@/config/site";
 import { useContactForm } from "@/hooks/use-contact-form";
 
 const FIELD_CLASS =
@@ -29,7 +28,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={submit} className="space-y-6">
-      <input type="hidden" name="access_key" value={CONTACT_FORM.accessKey} />
       <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio" />
       <input type="hidden" name="from_name" value="Portfolio Contact Form" />
 
