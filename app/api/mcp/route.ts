@@ -1,43 +1,25 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { createDigitalTwinServer } from '@/mcp/mcp-server';
-import { ListToolsRequestSchema, CallToolRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import { NextRequest, NextResponse } from "next/server";
+import { handleMessage } from "@/lib/mcp/json-rpc";
 
-// MCP JSON-RPC 2.0 handler using the new MCP server
-const server = createDigitalTwinServer();
+/** Stateless MCP endpoint (Streamable HTTP transport, JSON responses only). */
+export async function POST(request: NextRequest) {
+  const body = await request.json().catch(() => undefined);
 
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    console.log('MCP Request:', body);
-    
-    // Handle JSON-RPC method calls
-    if (body.method === 'tools/list') {
-      const tools = await server.request({ method: 'tools/list' }, ListToolsRequestSchema);
-      return NextResponse.json({
-        jsonrpc: '2.0',
-        id: body.id,
-        result: tools,
-      });
-    } else if (body.method === 'tools/call') {
-      const result = await server.request(body, CallToolRequestSchema);
-      return NextResponse.json({
-        jsonrpc: '2.0',
-        id: body.id,
-        result,
-      });
-    }
-    
-    return NextResponse.json({
-      jsonrpc: '2.0',
-      id: body.id,
-      error: { code: -32601, message: 'Method not found' },
-    });
-  } catch (e) {
-    console.error('MCP Error:', e);
-    return NextResponse.json({
-      jsonrpc: '2.0',
-      id: null,
-      error: { code: -32700, message: `Parse error: ${e instanceof Error ? e.message : 'Unknown error'}` },
-    });
+  if (body === undefined) {
+    return NextResponse.json(
+      { jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } },
+      { status: 400 },
+    );
   }
+
+  const response = await handleMessage(body);
+
+  // Notifications get an empty 202 acknowledgement.
+  if (response === null) return new NextResponse(null, { status: 202 });
+
+  return NextResponse.json(response);
+}
+
+export function GET() {
+  return new NextResponse(null, { status: 405, headers: { Allow: "POST" } });
 }
