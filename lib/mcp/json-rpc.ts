@@ -63,7 +63,8 @@ export async function handleMessage(message: unknown): Promise<JsonRpcResponse |
       if (typeof name !== "string") {
         return failure(id, ERROR_CODES.invalidParams, "`name` is required");
       }
-      const args = (params?.arguments ?? {}) as Record<string, unknown>;
+      const rawArgs = params?.arguments;
+      const args = typeof rawArgs === "object" && rawArgs !== null ? (rawArgs as Record<string, unknown>) : {};
       return success(id, await callTool(name, args));
     }
     default:

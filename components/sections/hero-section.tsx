@@ -19,11 +19,7 @@ export function HeroSection() {
               <p className="text-base text-gray-600 font-medium mb-8 leading-relaxed">{SITE.tagline}</p>
             </div>
 
-            <p className="text-base text-gray-600 leading-relaxed max-w-lg">
-              An information technology student with a passion for learning and developing skills in software
-              development, networking, and cybersecurity. Eager to contribute to real-world projects and gain
-              hands-on experience in the IT industry.
-            </p>
+            <p className="text-base text-gray-600 leading-relaxed max-w-lg">{SITE.bio}</p>
 
             <div className="flex gap-4 flex-wrap">
               <OpenChatButton />

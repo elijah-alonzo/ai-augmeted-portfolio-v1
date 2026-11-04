@@ -12,6 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: SITE.name,
   description: SITE.tagline,
+  openGraph: { title: SITE.name, description: SITE.tagline, type: "website" },
 };
 
 export default function RootLayout({

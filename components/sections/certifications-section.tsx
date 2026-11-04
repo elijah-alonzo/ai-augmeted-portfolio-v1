@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { CERTIFICATIONS } from "@/data/certifications";
 import { THEMES } from "@/lib/theme";
-import { Reveal, Section, SectionHeader, Tag } from "@/components/ui/section";
+import { Reveal, Section, SectionHeader } from "@/components/ui/section";
+import { Tag } from "@/components/ui/tag";
 
 export function CertificationsSection() {
   return (

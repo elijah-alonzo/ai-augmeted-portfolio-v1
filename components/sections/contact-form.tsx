@@ -17,8 +17,10 @@ interface FieldProps {
 function Field({ label, name, placeholder, type = "text", disabled }: FieldProps) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
-      <input type={type} name={name} placeholder={placeholder} required disabled={disabled} className={FIELD_CLASS} />
+      <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-2">
+        {label}
+      </label>
+      <input id={name} type={type} name={name} placeholder={placeholder} required disabled={disabled} className={FIELD_CLASS} />
     </div>
   );
 }
@@ -39,8 +41,11 @@ export function ContactForm() {
       <Field label="Subject" name="subject_line" placeholder="What's this about?" disabled={isSubmitting} />
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          Message
+        </label>
         <textarea
+          id="message"
           name="message"
           placeholder="Tell me about your project or opportunity..."
           rows={5}
@@ -69,12 +74,12 @@ export function ContactForm() {
       </button>
 
       {status === "success" && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+        <div role="status" className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
           <span className="font-medium">✓ Success!</span> {message}
         </div>
       )}
       {status === "error" && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+        <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
           <span className="font-medium">✗ Error:</span> {message}
         </div>
       )}

@@ -3,6 +3,7 @@ export const SITE = {
   fullName: "Elijah Taguinod Alonzo",
   tagline: "IT Student | Certified Database Specialist | Aspiring Cloud Specialist",
   badge: "Aspiring Cloud Specialist",
+  bio: "An information technology student with a passion for learning and developing skills in software development, networking, and cybersecurity. Eager to contribute to real-world projects and gain hands-on experience in the IT industry.",
   email: "elijahalonzo.me@gmail.com",
   assistantName: "Elijah",
   images: {

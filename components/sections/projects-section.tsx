@@ -2,7 +2,8 @@ import Image from "next/image";
 import { Github } from "lucide-react";
 import { PROJECTS } from "@/data/projects";
 import { THEMES } from "@/lib/theme";
-import { Reveal, Section, SectionHeader, Tag } from "@/components/ui/section";
+import { Reveal, Section, SectionHeader } from "@/components/ui/section";
+import { Tag } from "@/components/ui/tag";
 
 export function ProjectsSection() {
   return (

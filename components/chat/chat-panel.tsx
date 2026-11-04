@@ -79,7 +79,7 @@ export function ChatPanel() {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4" role="log" aria-live="polite">
         {messages.length === 0 && <EmptyState />}
         {messages.map((message, index) => (
           <MessageBubble key={index} message={message} />
@@ -93,6 +93,7 @@ export function ChatPanel() {
             type="text"
             className="flex-1 rounded-lg border border-blue-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition"
             placeholder="Ask me anything..."
+            aria-label="Your question"
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
             required

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { MessageCircle, X } from "lucide-react";
 import { SITE } from "@/config/site";
@@ -9,6 +10,13 @@ import { useChatDialog } from "./chat-dialog-context";
 /** Floating launcher button plus the modal that hosts the chat. */
 export function ChatDialog() {
   const { isOpen, open, close } = useChatDialog();
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && close();
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen, close]);
 
   if (!isOpen) {
     return (
@@ -23,7 +31,12 @@ export function ChatDialog() {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-end p-4">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Chat with ${SITE.name}'s digital twin`}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-end p-4"
+    >
       <div className="w-full max-w-md md:max-w-lg h-[600px] md:h-[650px] bg-gradient-to-b from-white via-blue-50 to-blue-100 rounded-2xl shadow-2xl border border-blue-200 flex flex-col overflow-hidden hover:border-blue-300 transition">
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-5 flex justify-between items-center shadow-lg">
           <div className="flex items-center gap-3">

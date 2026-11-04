@@ -67,7 +67,7 @@ export function Reveal({ variant = "up", className = "", delayMs, children }: Re
 
   return (
     <div
-      className={`transition-all ${revealed ? shown : hidden} ${className}`}
+      className={`transition-all motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:translate-y-0 ${revealed ? shown : hidden} ${className}`}
       style={delayMs ? { transitionDelay: `${delayMs}ms` } : undefined}
     >
       {children}
@@ -87,8 +87,4 @@ export function SectionHeader({ title, description }: SectionHeaderProps) {
       <p className="text-base text-gray-600 mx-auto">{description}</p>
     </Reveal>
   );
-}
-
-export function Tag({ className, children }: { className: string; children: ReactNode }) {
-  return <span className={`px-2 py-1 text-xs rounded ${className}`}>{children}</span>;
 }
