@@ -61,6 +61,14 @@ Other scripts: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`.
 | `GROQ_API_KEY` | LLM inference for the chatbot and MCP tools |
 | `UPSTASH_VECTOR_REST_URL` / `UPSTASH_VECTOR_REST_TOKEN` | Vector search for chatbot retrieval |
 
+## Docker
+
+```bash
+docker compose up --build   # reads secrets from .env.local, serves on :3000
+```
+
+The image is a multi-stage build on `node:22-alpine` that runs Next.js standalone output as a non-root user.
+
 ## Project Structure
 
 ```
