@@ -1,47 +1,45 @@
-<h1 align="center">
-    
-AI Augmented Portfolio
+<h1 align="center">Retrieval Augmented Portfolio</h1>
 
-</h1>
+<p>A personal portfolio website developed to automate how I introduce myself to recruiters and clients, replacing a static résumé and back-and-forth emails with an interactive online profile. The system allows visitors to browse my skills, certifications, experience and projects, and gives them an AI assistant that answers their questions about my background right away, in their own words.</p>
 
-A personal portfolio showcasing my professional background, technical and professional skills, certifications, experience, and completed projects. The portfolio also features an AI chatbot that allows visitors to ask questions and receive answers based on information about my background, skills, experience, and projects, providing a more interactive way to explore my professional profile.
+### Home
 
-![Home Section](docs/screenshots/home.png)
+The Home section is the first thing visitors see: my name, title and a short introduction, with buttons to chat with my digital twin or get in touch, and links to my social profiles. It replaces sending a résumé and waiting for a reply with a page that tells visitors who I am and lets them reach me right away.
+
+[![ai-augmeted-portfolio-v1](docs/demo-img-01.png)](docs/demo-img-01.png)
 
 ### Skills
 
-The Skills section presents my technical and professional competencies, including programming languages, frameworks, tools, and soft skills. It gives visitors an overview of the areas I have experience in and the capabilities I bring to my work.
+The Skills section presents my technical and professional strengths, from programming languages and frameworks to design, video editing and soft skills. It replaces a long list on a résumé with grouped cards, so visitors can see at a glance what I can do and how comfortable I am with each programming language.
 
+[![ai-augmeted-portfolio-v1](docs/demo-img-02.png)](docs/demo-img-02.png)
 
-![Skills Section](docs/screenshots/skills.png)
+### Certifications and Training
 
-### Certifications & Training
+The Certifications and Training section highlights the certifications I have earned and the conferences and seminars I have attended. It gathers proof of my continued learning in one place, so visitors don't have to ask for copies of certificates.
 
-The Certifications & Training section highlights my professional certifications, completed courses, and training programs. It provides evidence of my continued learning and the additional knowledge and skills I have developed beyond formal education.
-
-![Certifications Section](docs/screenshots/certifications.png)
+[![ai-augmeted-portfolio-v1](docs/demo-img-03.png)](docs/demo-img-03.png)
 
 ### Experience
 
-The Experience section presents my professional background, including previous roles, responsibilities, and notable achievements. It gives visitors a better understanding of my practical experience and how I have applied my skills in real-world settings.
+The Experience section shows the roles I have held, both technical work and leadership in student government, along with the competitions I have placed in. It gives visitors a clear picture of how I have applied my skills in real settings.
 
-
-![Experience Section](docs/screenshots/experiences.png)
+[![ai-augmeted-portfolio-v1](docs/demo-img-04.png)](docs/demo-img-04.png)
 
 ### Projects
 
-The Projects section showcases selected projects I have developed, including their purpose, key features, and technologies used. It demonstrates my ability to apply technical knowledge to solve problems and develop practical solutions.
+The Projects section showcases selected work, with a short description, the topics each project covers and a link to see more. It lets visitors judge my work directly instead of relying on a written summary.
 
-![Projects Section](docs/screenshots/projects.png)
+[![ai-augmeted-portfolio-v1](docs/demo-img-05.png)](docs/demo-img-05.png)
 
 ### Contact
 
-The Contact section provides visitors with ways to connect with me through my email and social media profiles. It serves as a direct point of contact for professional inquiries, opportunities, or further communication.
+The Contact section lists every way to reach me and includes a message form, so visitors can get in touch without leaving the page or opening their email app. It makes it quick to turn interest into a conversation.
 
-![Contact Section](docs/screenshots/contact.png)
+[![ai-augmeted-portfolio-v1](docs/demo-img-06.png)](docs/demo-img-06.png)
 
-### AI Chatbot Feature
+### AI Chatbot
 
-The AI Chatbot allows visitors to interact with an AI assistant that can answer questions about my background, skills, experience, certifications, and projects. It provides an interactive way for visitors to explore information about my portfolio beyond the static content presented throughout the website.
+The AI Chatbot lets visitors ask questions about my background, skills, experience and projects, and replies in my voice within seconds. It replaces waiting for an email reply or digging through the page with a simple conversation, available at any time.
 
-![AI Chatbot](docs/screenshots/chat.png)
+[![ai-augmeted-portfolio-v1](docs/demo-img-07.png)](docs/demo-img-07.png)
