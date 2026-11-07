@@ -1,4 +1,12 @@
 # syntax=docker/dockerfile:1
+#
+# Production image: the Next.js standalone server on Node 22 Alpine, port 3000.
+# The simplest way to run it is compose.yaml, next to this file:
+#
+#   # put GROQ_API_KEY, UPSTASH_VECTOR_REST_URL and UPSTASH_VECTOR_REST_TOKEN in .env.local
+#   docker compose up -d --build
+#
+# The page renders without those keys; only the chatbot and MCP endpoints need them.
 
 FROM node:22-alpine AS base
 WORKDIR /app
