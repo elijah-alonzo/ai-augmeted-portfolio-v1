@@ -7,7 +7,7 @@ export const SITE = {
   email: "elijahalonzo.me@gmail.com",
   assistantName: "Elijah",
   images: {
-    logo: "/elijah-alonzo.png",
+    logo: "/logo-01.png",
     avatar: "/profile.png",
   },
 } as const;
